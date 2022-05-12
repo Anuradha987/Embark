@@ -1,0 +1,106 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="wrapper">
+        <div class="login">
+            <div class="login-form">
+                <h1 class="login-title">Sign-In</h1>
+                <div class="form-wrapper">
+                    <div class="input-wrapper">
+                        <label class="label" for="email">Email</label>
+                        <input class="input" type="text" id="email" formControlName="email" name="email" required autocomplete="off" />
+                    </div><br>
+                    <div class="input-wrapper">
+                        <label class="label" for="password">Password</label>
+                        <input class="input" type="password" id="password" formControlName="password" name="password" required />
+                    </div>
+                    <div class="action-help">
+                    </div>
+                    <div class="actions">
+                        <input class="action" type="submit" value="Login" data-toggle="collapse" data-target="#collapseExample" />
+                        <div class="signup-action" routerLink="/register" routerLinkActive="active">
+                            <p style="text-align: center;"> </p> <a class="signup-link"> Don't have an account?
+                Sign Up</a>
+                            <br>
+                            <a class="signup-link" routerLink="/admin" style="font-size: small;"> Admin Login</a>
+                        </div>
+
+
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <div class="login-decoration">
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login100-form validate-form">
+          <span class="login100-form-title">
+            <a style="font-family: cursive; font-size: large;"> Welcome To Health Corner</a>
+          </span>
+
+
+          <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+            <input class="input100" type="text" name="email" placeholder="Email" required formControlName="email" />
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <input class="input100" type="password" name="pass" placeholder="Password" required
+              formControlName="password" />
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              Login
+            </button>
+          </div>
+          <div class="container-login100-form-btn">
+            <a class="txt2" routerLink="/register" routerLinkActive="active">
+              Become a Member!
+              <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </form> -->
+<!-- </div>
+</div>
+</div>
+</div> -->

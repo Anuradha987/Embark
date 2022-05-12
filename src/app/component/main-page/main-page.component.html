@@ -1,0 +1,68 @@
+<br>
+<a style="padding-left: 50px;" href="#" class="list-group-item -action active; color: sel-green">
+  Trending Product List
+</a><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let itemsRandom of itemsRandoms">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{itemsRandom.name}}</h5>
+          <p class="card-text"> Rs {{itemsRandom.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-2">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          All Categories
+        </a>
+        <a class="list-group-item list-group-item-action" *ngFor="let type of categoryType"
+          (click)="getIteam(type.id)">{{ type.category_Name }}
+        </a>
+      </div>
+    </div>
+    <div class="col-xl-10">
+      <div class="row">
+        <div class="col-xl-4" *ngFor="let item of items; let i = index">
+          <div class="card">
+            <img class="card-img-top mx-auto d-block" src={{item.image_path}} alt="Card image" />
+            <div class="card-body">
+              <h4 class="card-title">{{ item.name }}</h4>
+              <p class="card-text">Rs {{ item.price }}</p>
+              <div class="container">
+                <span id="rateMe1"></span>
+              </div>
+
+              <div class="star-rating">
+                <input type="radio" id="5-stars" name="rating" value="5" />
+                <label for="5-stars" class="star">&#9733;</label>
+                <input type="radio" id="4-stars" name="rating" value="4" />
+                <label for="4-stars" class="star">&#9733;</label>
+                <input type="radio" id="3-stars" name="rating" value="3" />
+                <label for="3-stars" class="star">&#9733;</label>
+                <input type="radio" id="2-stars" name="rating" value="2" />
+                <label for="2-stars" class="star">&#9733;</label>
+                <input type="radio" id="1-star" name="rating" value="1" />
+                <label for="1-star" class="star">&#9733;</label>
+              </div>
+
+              <br>
+              <button class="btn btn-primary cartbtn" (click)="addCart(item, i)">
+                ADD TO CART
+              </button>
+              <div *ngFor="let num of clickBtn">
+                <span class="badge badge-pill badge-light" *ngIf="i == num">ADDING TO CART</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

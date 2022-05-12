@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Embark Passion</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a routerLink="/pets" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pets</a>
+                </li>
+                <li>
+                    <a routerLink="/adoptions">Adoption Details</a>
+                </li>
+                <li>
+                    <a routerLink="/events" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <a [routerLink]="['/pets']"> <span>View | Mange Pets</span> </a>
+
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" style="font-weight: bold;">Create New Pet</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="container contact-form">
+
+                <div class="contact-image">
+                    <img src="../../../assets/images/img/Embark_logo.png" alt="rocket_contact" />
+                </div>
+                <form [formGroup]="petRegisterForm" class="register-form" id="register-form">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example1" class="form-control" required formControlName="pet_name" />
+                                <label class="form-label" for="form3Example1">Pet Name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example2" class="form-control" required formControlName="pet_image" />
+                                <label class="form-label" for="form3Example2">Pet Image</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example2" class="form-control" required formControlName="gender" />
+                                <label class="form-label" for="form3Example2">Gender</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form3Example3" class="form-control" required formControlName="age" />
+                        <label class="form-label" for="form3Example3">Age</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example4" class="form-control" formControlName="description" />
+                        <label class="form-label" for="form3Example4">Description</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example4" class="form-control" formControlName="vaccinated" />
+                        <label class="form-label" for="form3Example4">Vaccinated</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example4" class="form-control" formControlName="adopted" />
+                        <label class="form-label" for="form3Example4">Adopted</label>
+                    </div>
+                    <br><br>
+                    <!-- Submit button -->
+                    <button type="submit" (click)="onSubmit()" class="btn btn-primary btn-block mb-4">Create New
+                        Pets</button>
+
+                    <!-- Register buttons -->
+                    <!-- <div class="text-center">
+                    <p>or sign up with:</p>
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-google"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-github"></i>
+                    </button>
+                </div> -->
+                </form>
+            </div>
+            <div class="line"></div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

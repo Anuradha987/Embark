@@ -1,0 +1,41 @@
+<nav *ngIf="nav.visible" class="navbar navbar-expand-lg navbar-light" style="background-color: #1f101013;">
+  <a class="navbar-brand nav-link" routerLink="/" routerLinkActive="active"
+    style="font-family: cursive; font-size: 25px;"> <img src="../../../assets/images/food/1111.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home" href="#">Shop <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/about-us" href="#">About Us <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/share" href="#">Wallet <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/orders" href="#">Order History <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/tickets" href="#">Tickets <span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+    <li class="nav-item active" style="text-align: right;">
+      <a class="nav-link" routerLink="shopping-cart" routerLinkActive="active"><i class="fa fa-shopping-cart"></i>
+        <span class="badge badge-success">{{itemCount}}</span>
+        <span class="sr-only">(current)</span></a>
+    </li>
+    <button *ngIf="!isLogin" type="submit" class="btn btn-outline-danger" id="submit" (click)="onLogin()">Login</button>
+    <button *ngIf="isLogin" type="submit" class="btn btn-outline-warning" id="submit" (click)="logOut()">logOut</button>
+    &nbsp;&nbsp;&nbsp;
+
+  </div>
+</nav>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Embark Passion</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a routerLink="/pets" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pets</a>
+                </li>
+                <li>
+                    <a routerLink="/adoptions">Adoption Details</a>
+                </li>
+                <li class="active">
+                    <a routerLink="/events" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+            </ul>
+
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <a [routerLink]="['/add-events']"> <span>Add New Events</span> </a>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <h2>Event Details Tab</h2><br>
+            <p> </p>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Event name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Telephone Number</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of events">
+                        <td>{{ event.id }}</td>
+                        <td>{{ event.name }}</td>
+                        <td>{{ event.description }}</td>
+                        <td>{{ event.date }}</td>
+                        <td>{{ event.time }}</td>
+                        <td>{{ event.tp }}</td>
+                        <td>{{ event.location }}</td>
+                        <td>
+                            <button (click)="DeleteEvents(event.id)" class="btn"><i
+                                    class="fa fa-trash"></i></button>&nbsp;&nbsp;
+                            <button (click)="UpdateTodoEvents(event.id)" class="btnUpdate"><i
+                                    class="fa fa-edit"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="line"></div>
+
+            <section class="h-100 bg-dark">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col">
+                            <div class="card card-registration my-4">
+                                <div class="row g-0">
+                                    <div class="col-xl-6 d-none d-xl-block">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                    </div>
+                                    <div class="col-xl-6">
+
+                                        <div class="card-body p-md-5 text-black">
+                                            <form [formGroup]="eventForm" class="register-form" id="register-form">
+                                                <h3 class="mb-5 text-uppercase">Event Update Form</h3>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example1" class="form-control" required formControlName="id" disabled />
+                                                        <label class="form-label" for="form3Example1">Id</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example1" class="form-control" required formControlName="name" />
+                                                        <label class="form-label" for="form3Example1">name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example1" class="form-control" required formControlName="description" />
+                                                        <label class="form-label" for="form3Example1">description</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="date" id="form3Example2" class="form-control" required formControlName="date" />
+                                                        <label class="form-label" for="form3Example2">date</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="time" id="form3Example3" class="form-control" required formControlName="time" />
+                                                        <label class="form-label" for="form3Example3">time</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example2" class="form-control" required formControlName="tp" />
+                                                        <label class="form-label" for="form3Example2">tp</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example4" class="form-control" required formControlName="location" />
+                                                        <label class="form-label" for="form3Example4">location</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-submit">
+                                                    <button style="text-align: left;" type="submit" class="btn btn-outline-warning" id="submit" (click)="onSubmitUpdate()">Update
+                                                        Event</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <br><br>
+
+                                        <br>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <div class="line"></div>
+
+            <h3>Lorem Ipsum Dolor</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p> -->-->
+        </div>
+    </div>
+</body>
+
+</html>

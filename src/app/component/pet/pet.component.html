@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Embark Passion</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a routerLink="/pets" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pets</a>
+                </li>
+                <li>
+                    <a routerLink="/adoptions">Adoption Details</a>
+                </li>
+                <li>
+                    <a routerLink="/events" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <a [routerLink]="['/add-pets']"> <span>Add New Pets</span> </a>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <h2>Pet Details Tab</h2><br>
+            <p> </p>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Pet name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Yes</th>
+                        <th scope="col">Adopted</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pet of pets">
+                        <td>{{ pet.id }}</td>
+                        <td>{{ pet.pet_image }}</td>
+                        <td>{{ pet.pet_name }}</td>
+                        <td>{{ pet.gender }}</td>
+                        <td>{{ pet.age }}</td>
+                        <td>{{ pet.description }}</td>
+                        <td>{{ pet.vaccinated }}</td>
+                        <td>{{ pet.adopted }}</td>
+                        <td>
+                            <!-- <button (click)="DeletePets(pet.id)" class="btn"><i
+                                    class="fa fa-trash"></i></button>&nbsp;&nbsp; -->
+                            <button (click)="UpdateTodoPets(pet.id)" class="btnUpdate"><i
+                                    class="fa fa-edit"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="line"></div>
+
+            <section class="h-100 bg-dark">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col">
+                            <div class="card card-registration my-4">
+                                <div class="row g-0">
+                                    <div class="col-xl-6 d-none d-xl-block">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp" alt="Sample photo" class="img-fluid" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                    </div>
+                                    <div class="col-xl-6">
+
+                                        <div class="card-body p-md-5 text-black">
+                                            <form [formGroup]="petForm" class="register-form" id="register-form">
+                                                <h3 class="mb-5 text-uppercase">Pet registration form</h3>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example1" class="form-control" required formControlName="id" disabled />
+                                                        <label class="form-label" for="form3Example1">Id</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example1" class="form-control" required formControlName="pet_name" />
+                                                        <label class="form-label" for="form3Example1">Pet Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example1" class="form-control" required formControlName="pet_image" />
+                                                        <label class="form-label" for="form3Example1">Pet Image</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example2" class="form-control" required formControlName="gender" />
+                                                        <label class="form-label" for="form3Example2">Gender</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example3" class="form-control" required formControlName="age" />
+                                                        <label class="form-label" for="form3Example3">Age</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example2" class="form-control" required formControlName="gender" />
+                                                        <label class="form-label" for="form3Example2">Gender</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example4" class="form-control" required formControlName="description" />
+                                                        <label class="form-label" for="form3Example4">Description</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example4" class="form-control" required formControlName="vaccinated" />
+                                                        <label class="form-label" for="form3Example4">Vaccinated</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" id="form3Example4" class="form-control" required formControlName="adopted" />
+                                                        <label class="form-label" for="form3Example4">Adopted</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-submit">
+                                                    <button style="text-align: left;" type="submit" class="btn btn-outline-warning" id="submit" (click)="onSubmitUpdate()">Update
+                                                        Citizen</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <br><br>
+
+                                        <br>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

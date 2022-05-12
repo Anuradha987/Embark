@@ -1,0 +1,64 @@
+<!-- <div class="back-div" style="background-image: url(../../../assets/images/health.png)">
+  <div class="limiter" style="background-image: url(../../../assets/images/health.png)">
+
+    <div class="container-login100" style="background-image: url(../../../assets/images/136920.jpg)">
+
+      <div class="wrap-login100">
+
+        <div class="login100-pic js-tilt">
+          <img src="../../assets/images/uv-logo.png" alt="IMG" style="padding-left: 75px; padding-top: 25px;" />
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input class="form-control" placeholder="Admin's Email" aria-label="Admin's Email"
+              aria-describedby="basic-addon1" type="text" required formControlName="email" />
+          </div>
+
+          <div class="input-group mb-3">
+            <input class="form-control" placeholder="Admin's Password" aria-label="Admin's Password"
+              aria-describedby="basic-addon2" type="password" name="pass" required formControlName="password" />
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">***</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-black px-md-5">Login</button>&nbsp;
+          &nbsp; &nbsp;
+        </form>
+        <br />
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<body>
+  <section>
+    <div class="container">
+      <div class="user signinBx">
+        <div class="imgBx"><img src="../../../assets/images/food/front-of-house.jpg" alt="" /></div>
+        <div class="formBx">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="register-form" id="register-form">
+            <h2 style="text-align: center;">Admin Portal</h2><br>
+            <div class="form-group">
+              <label for="name">Admin Email :</label>
+              <input type="text" name="name" id="name" required formControlName="email" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password :</label>
+              <input type="password" name="password" id="password" formControlName="password" />
+            </div><br>
+            <div class="form-submit">
+              <button style="text-align: left;" type="submit" class="btn btn-primary" style="width: 90px;height: 30px;"
+                id="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,37 @@
+<body>
+    <section>
+        <div class="container">
+            <div class="user signinBx">
+                <div class="imgBx"><img src="../../assets/images/51zOrDCNVL.jpg" alt="" /></div>
+                <div class="formBx">
+                    <form [formGroup]="contactForm" class="register-form" id="register-form">
+                        <h2 style="text-align: center;">Embark | Sign-Up</h2><br>
+                        <div class="form-group">
+                            <label for="name">Full Name :</label>
+                            <input type="text" name="name" id="name" required formControlName="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Address :</label>
+                            <input type="text" name="address" id="address" autocomplete="false" formControlName="address" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">Contact Number :</label>
+                            <input type="text" name="tel" id="tel" formControlName="tel" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" name="email" id="email" formControlName="email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password :</label>
+                            <input type="password" name="password" id="password" formControlName="password" />
+                        </div><br>
+                        <div class="form-submit">
+                            <button style="text-align: left;" type="submit" class="btn btn-primary" style="width: 90px;height: 30px;" id="submit" (click)="onSubmit()">Let's Go</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

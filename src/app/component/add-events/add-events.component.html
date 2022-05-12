@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Embark Passion</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a routerLink="/pets" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pets</a>
+                </li>
+                <li>
+                    <a routerLink="/adoptions">Adoption Details</a>
+                </li>
+                <li>
+                    <a routerLink="/events" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+                <li>
+                    <a>More</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <a [routerLink]="['/adoptions']"> <span>View | Manage Adoptions</span> </a>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Create New Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <h2></h2>
+            <div class="container contact-form">
+                <div class="contact-image">
+                    <img src="../../../assets/images/img/Embark_logo.png" alt="rocket_contact" />
+                </div>
+                <form [formGroup]="eventRegisterForm" class="register-form" id="register-form">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example1" class="form-control" formControlName="name" />
+                                <label class="form-label" for="form3Example1">Event name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form3Example2" class="form-control" formControlName="description" />
+                                <label class="form-label" for="form3Example2">Description</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="date" id="form3Example3" class="form-control" formControlName="date" />
+                        <label class="form-label" for="form3Example3">Date</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="time" id="form3Example4" class="form-control" formControlName="time" />
+                        <label class="form-label" for="form3Example4">Time</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example4" class="form-control" formControlName="tp" />
+                        <label class="form-label" for="form3Example4">Telephone number</label>
+                    </div>
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example4" class="form-control" formControlName="location" />
+                        <label class="form-label" for="form3Example4">Location</label>
+                    </div>
+                    <br><br>
+                    <!-- Checkbox -->
+                    <!-- <div class="form-check d-flex justify-content-center mb-4">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                    <label class="form-check-label" for="form2Example33">
+                        Subscribe to our newsletter
+                    </label>
+                </div> -->
+
+                    <!-- Submit button -->
+                    <button type="submit" (click)="onSubmit()" class="btn btn-primary btn-block mb-4">Create New
+                        Pets</button>
+
+                    <!-- Register buttons -->
+                    <!-- <div class="text-center">
+                    <p>or sign up with:</p>
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-google"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-github"></i>
+                    </button>
+                </div> -->
+                </form>
+            </div>
+            <div class="line"></div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
