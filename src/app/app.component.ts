@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     private _router: Router
   ) {
     this.router = _router.url;
-    this.titleService.setTitle("BISTRO | Online Food Ordering");
+    this.titleService.setTitle("| Embark |");
   }
 
 

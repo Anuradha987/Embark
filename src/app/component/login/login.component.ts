@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
         //       console.log(dataOtp);
 
         //       if (dataOtp == "Success" || data == "Success") {
-        this.router.navigate(["home"]);
+        this.router.navigate(["pets"]);
         //       }
 
         //     });
@@ -87,7 +87,8 @@ export class LoginComponent implements OnInit {
           "Please check user name and password!",
           "error"
         );
-        this.router.navigate(["home"]);
+        location.reload();
+        // this.router.navigate(["home"]);
       }
     });
   }

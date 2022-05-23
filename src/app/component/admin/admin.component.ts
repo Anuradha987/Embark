@@ -49,7 +49,7 @@ export class AdminComponent implements OnInit {
           sessionStorage.setItem("loggedAdminName", serverResp["name"]);
           sessionStorage.setItem("loggedAdminAddress", serverResp["address"]);
           sessionStorage.setItem("loggedAdminEmail", serverResp["email"]);
-          this.router.navigate(["admin-dashboard"]);
+          this.router.navigate(["pets"]);
         } else {
 
           swal.fire(
